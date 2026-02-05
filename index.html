@@ -3,36 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MD-5Q | SOVEREIGN CENTER</title>
+    <title>MD-5Q | SOVEREIGN IDENTITY</title>
     <style>
-        body { background-color: #000; color: #00ff41; font-family: monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; }
-        .vault { border: 2px solid #00ff41; padding: 40px; box-shadow: 0 0 30px #00ff41; border-radius: 15px; background: rgba(0, 20, 0, 0.9); width: 80%; max-width: 400px; }
-        .glitch-text { font-size: 1.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 20px; text-shadow: 2px 2px #ff0000; }
-        .btn { display: block; width: 100%; padding: 15px; margin: 15px 0; border: 1px solid #00ff41; color: #00ff41; background: transparent; cursor: pointer; font-weight: bold; text-decoration: none; transition: 0.3s; }
-        .btn:hover { background: #00ff41; color: #000; box-shadow: 0 0 20px #00ff41; }
-        .status { font-size: 0.7rem; color: #ff0000; animation: blink 1s infinite; margin-top: 15px; }
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+        body { background-color: #000; color: #0f0; font-family: 'Courier New', monospace; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; overflow: hidden; }
+        .vault-container { text-align: center; border: 2px solid #0f0; padding: 40px; box-shadow: 0 0 20px #0f0; background: rgba(0, 20, 0, 0.9); position: relative; width: 90%; max-width: 400px; }
+        h1 { font-size: 1.5rem; margin-bottom: 20px; letter-spacing: 3px; text-transform: uppercase; }
+        .btn { display: block; width: 100%; padding: 15px; margin: 10px 0; border: 1px solid #0f0; background: transparent; color: #0f0; text-decoration: none; cursor: pointer; transition: 0.3s; font-weight: bold; text-transform: uppercase; }
+        .btn:hover { background: #0f0; color: #000; box-shadow: 0 0 15px #0f0; }
+        input { width: 100%; padding: 10px; margin-bottom: 10px; background: #000; border: 1px solid #0f0; color: #0f0; text-align: center; box-sizing: border-box; }
+        #admin-panel { display: none; }
     </style>
 </head>
 <body>
-    <div class="vault">
-        <div class="glitch-text">MD-5Q SOVEREIGN</div>
-        <p style="font-size: 0.8rem;">[ SYSTEM STATUS: SECURED ]</p>
-        <button onclick="access()" class="btn">ADMIN LOGIN</button>
-        <a href="https://instagram.com/md_5q" class="btn">PUBLIC IDENTITY</a>
-        <div class="status">WARNING: UNAUTHORIZED ACCESS PROHIBITED</div>
+    <div class="vault-container">
+        <h1>MD-5Q SOVEREIGN</h1>
+        <div id="login-area">
+            <input type="password" id="pass" placeholder="ENTER ACCESS KEY">
+            <button class="btn" onclick="checkPass()">ADMIN LOGIN</button>
+            <a href="https://www.instagram.com/md__5q" class="btn">PUBLIC IDENTITY</a>
+        </div>
+        <div id="admin-panel">
+            <div style="color: yellow; margin-bottom: 20px;">ACCESS GRANTED</div>
+            <button class="btn">REQUEST VERIFICATION</button>
+            <button class="btn" onclick="location.reload()">LOGOUT</button>
+        </div>
     </div>
     <script>
-        function access() {
-            let key = prompt("ENTER SOVEREIGN KEY:");
-            if(key === "MD5Q#Vault@2026") {
-                alert("ACCESS GRANTED. WELCOME COMMANDER.");
-                window.location.href = "https://github.com/md-5q/identity-core";
-            } else {
-                alert("ACCESS DENIED. IP LOGGED.");
-            }
+        function checkPass() {
+            if(document.getElementById('pass').value === 'MD5Q#Vault@2026') {
+                document.getElementById('login-area').style.display = 'none';
+                document.getElementById('admin-panel').style.display = 'block';
+            } else { alert('ACCESS DENIED'); }
         }
     </script>
 </body>
 </html>
-
