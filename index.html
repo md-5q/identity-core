@@ -6,25 +6,31 @@
     <title>MD-5Q | SOVEREIGN CENTER</title>
     <style>
         body { background-color: #000; color: #00ff41; font-family: monospace; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; margin: 0; text-align: center; }
-        .vault { border: 2px solid #00ff41; padding: 40px; box-shadow: 0 0 30px #00ff41; border-radius: 15px; background: rgba(0, 20, 0, 0.9); }
-        .btn { display: block; width: 100%; padding: 15px; margin: 15px 0; border: 1px solid #00ff41; color: #00ff41; background: transparent; cursor: pointer; font-weight: bold; }
-        .btn:hover { background: #00ff41; color: #000; }
+        .vault { border: 2px solid #00ff41; padding: 40px; box-shadow: 0 0 30px #00ff41; border-radius: 15px; background: rgba(0, 20, 0, 0.9); width: 80%; max-width: 400px; }
+        .glitch-text { font-size: 1.8rem; font-weight: bold; text-transform: uppercase; margin-bottom: 20px; text-shadow: 2px 2px #ff0000; }
+        .btn { display: block; width: 100%; padding: 15px; margin: 15px 0; border: 1px solid #00ff41; color: #00ff41; background: transparent; cursor: pointer; font-weight: bold; text-decoration: none; transition: 0.3s; }
+        .btn:hover { background: #00ff41; color: #000; box-shadow: 0 0 20px #00ff41; }
+        .status { font-size: 0.7rem; color: #ff0000; animation: blink 1s infinite; margin-top: 15px; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
     </style>
 </head>
 <body>
     <div class="vault">
-        <h1 style="text-shadow: 2px 2px #ff0000;">MD-5Q SOVEREIGN</h1>
-        <p>[ SECURE ACCESS POINT ]</p>
-        <button onclick="auth()" class="btn">ADMIN LOGIN</button>
-        <a href="https://instagram.com/md_5q" class="btn">PUBLIC PROFILE</a>
+        <div class="glitch-text">MD-5Q SOVEREIGN</div>
+        <p style="font-size: 0.8rem;">[ SYSTEM STATUS: SECURED ]</p>
+        <button onclick="access()" class="btn">ADMIN LOGIN</button>
+        <a href="https://instagram.com/md_5q" class="btn">PUBLIC IDENTITY</a>
+        <div class="status">WARNING: UNAUTHORIZED ACCESS PROHIBITED</div>
     </div>
     <script>
-        function auth() {
-            let k = prompt("ENTER SOVEREIGN KEY:");
-            if(k === "MD5Q#Vault@2026") {
-                alert("ACCESS GRANTED.");
+        function access() {
+            let key = prompt("ENTER SOVEREIGN KEY:");
+            if(key === "MD5Q#Vault@2026") {
+                alert("ACCESS GRANTED. WELCOME COMMANDER.");
                 window.location.href = "https://github.com/md-5q/identity-core";
-            } else { alert("ACCESS DENIED."); }
+            } else {
+                alert("ACCESS DENIED. IP LOGGED.");
+            }
         }
     </script>
 </body>
