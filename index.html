@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>Flash Mail Q | بريد النخبة السريع</title>
+    <meta name="description" content="Flash Mail Q - أسرع خدمة بريد مؤقت ملكي من تطوير md-5q لتفعيل الحسابات وحماية خصوصيتك.">
+    <meta name="keywords" content="بريد مؤقت, Flash Mail Q, md-5q, بريد وهمي, 10 minute mail, استقبال رسائل">
+    
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #00d2ff; --secondary: #3a7bd5; --accent: #e94560; }
@@ -24,18 +28,26 @@
             <small style="color: var(--primary);">اضغط للنسخ</small>
         </div>
         <button class="btn-gen" onclick="handleButtonClick()">توليد بريد ملكي جديد</button>
+        
         <div style="margin: 25px 0; min-height: 100px;">
             <script src="https://pl28668580.effectivegatecpm.com/c6/60/04/c6600416d6244d73e35d8ef28bc9dc0c.js"></script>
         </div>
+
         <div style="text-align: right;">
             <div style="color: var(--accent); font-weight: bold; margin-bottom: 10px;">📥 الوارد:</div>
             <div id="messages" style="color: #aaa; font-size: 0.8rem;">بانتظار الرسائل...</div>
         </div>
     </div>
+
     <script>
         let currentEmail = "";
         const smartLink = "https://www.profitablecpmrate.com/y33v8d462?key=c6600416d6244d73e35d8ef28bc9dc0c"; 
-        function handleButtonClick() { window.open(smartLink, '_blank'); generateNew(); }
+
+        function handleButtonClick() { 
+            window.open(smartLink, '_blank'); 
+            generateNew(); 
+        }
+
         async function generateNew() {
             const domains = ["1secmail.com", "1secmail.org", "1secmail.net"];
             const randomDomain = domains[Math.floor(Math.random() * domains.length)];
@@ -44,7 +56,12 @@
             document.getElementById('email-display').innerText = currentEmail;
             startChecking();
         }
-        function copyEmail() { navigator.clipboard.writeText(currentEmail); alert("تم النسخ!"); }
+
+        function copyEmail() { 
+            navigator.clipboard.writeText(currentEmail); 
+            alert("تم نسخ البريد بنجاح!"); 
+        }
+
         async function checkInbox() {
             if (!currentEmail) return;
             const [user, domain] = currentEmail.split('@');
@@ -60,7 +77,12 @@
                 }
             } catch (e) {}
         }
-        function startChecking() { if (window.inboxTimer) clearInterval(window.inboxTimer); window.inboxTimer = setInterval(checkInbox, 5000); }
+
+        function startChecking() { 
+            if (window.inboxTimer) clearInterval(window.inboxTimer); 
+            window.inboxTimer = setInterval(checkInbox, 5000); 
+        }
+
         window.onload = generateNew;
     </script>
 </body>
