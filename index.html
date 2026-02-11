@@ -3,87 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Flash Mail Q | بريد النخبة السريع</title>
-    <meta name="description" content="Flash Mail Q - أسرع خدمة بريد مؤقت ملكي من تطوير md-5q لتفعيل الحسابات وحماية خصوصيتك.">
-    <meta name="keywords" content="بريد مؤقت, Flash Mail Q, md-5q, بريد وهمي, 10 minute mail, استقبال رسائل">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <title>GOLDEN SHADOW | ULTIMATE EDITION 👑</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #00d2ff; --secondary: #3a7bd5; --accent: #e94560; }
-        body { font-family: 'Tajawal', sans-serif; background: #0f0c29; color: white; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-        .container { width: 90%; max-width: 450px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 20px; border-radius: 30px; box-shadow: 0 25px 50px rgba(0,0,0,0.5); text-align: center; }
-        .logo { font-size: 2.5rem; font-weight: 800; background: linear-gradient(45deg, var(--primary), #92fe9d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 25px; }
-        .email-box { background: rgba(0, 0, 0, 0.3); padding: 20px; border-radius: 15px; border: 1px solid var(--primary); margin: 20px 0; cursor: pointer; transition: 0.3s; }
-        .btn-gen { background: linear-gradient(45deg, var(--primary), var(--secondary)); color: white; border: none; width: 100%; padding: 18px; border-radius: 15px; font-size: 1.2rem; font-weight: bold; cursor: pointer; box-shadow: 0 10px 20px rgba(0,210,255,0.3); transition: 0.3s; }
-        .btn-gen:active { transform: scale(0.95); }
-        .msg-card { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; margin-bottom: 10px; border-right: 4px solid var(--accent); text-align: right; }
+        :root { --gold: #d4af37; --black: #050505; }
+        body { margin: 0; padding: 0; background-color: var(--black); color: white; font-family: 'Cairo', sans-serif; overflow: hidden; height: 100vh; cursor: crosshair; }
+        #particles-js { position: fixed; width: 100%; height: 100%; z-index: 1; }
+        
+        .main-content {
+            position: relative; z-index: 10; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; height: 100vh;
+            background: radial-gradient(circle at center, rgba(20, 20, 20, 0.4) 0%, rgba(0, 0, 0, 0.9) 100%);
+        }
+
+        /* دخان ذهبي خلف الاسم */
+        .smoke-container { position: relative; }
+        .smoke-container::before {
+            content: ''; position: absolute; top: 50%; left: 50%; width: 200px; height: 100px;
+            background: var(--gold); filter: blur(80px); opacity: 0.15;
+            transform: translate(-50%, -50%); animation: smokeFloat 6s infinite;
+        }
+
+        @keyframes smokeFloat { 0%, 100% { opacity: 0.1; } 50% { opacity: 0.3; transform: translate(-50%, -60%) scale(1.2); } }
+
+        .main-title {
+            font-family: 'Cinzel', serif; font-size: 4rem; color: var(--gold);
+            letter-spacing: 10px; text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            animation: royalPulse 3s infinite ease-in-out;
+        }
+
+        @keyframes royalPulse { 50% { transform: scale(1.05); filter: brightness(1.2); text-shadow: 0 0 60px var(--gold); } }
+
+        .services-grid { display: flex; gap: 20px; margin-top: 40px; z-index: 20; }
+        .card {
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: 30px; border-radius: 20px; backdrop-filter: blur(15px);
+            transition: 0.4s; text-align: center; width: 220px;
+        }
+        .card:hover { transform: translateY(-15px); border-color: var(--gold); box-shadow: 0 0 30px rgba(212, 175, 55, 0.2); }
+
+        .dev-name { margin-top: 50px; font-weight: bold; color: var(--gold); font-size: 1.2rem; text-shadow: 0 0 10px var(--gold); }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">FLASH MAIL Q</div>
-        <div class="email-box" onclick="copyEmail()">
-            <div id="email-display" style="font-size: 1.1rem;">جاري التوليد...</div>
-            <small style="color: var(--primary);">اضغط للنسخ</small>
+
+    <div id="particles-js"></div>
+
+    <div class="main-content">
+        <div class="smoke-container">
+            <h1 class="main-title">GOLDEN SHADOW</h1>
         </div>
-        <button class="btn-gen" onclick="handleButtonClick()">توليد بريد ملكي جديد</button>
-        
-        <div style="margin: 25px 0; min-height: 100px;">
-            <script src="https://pl28668580.effectivegatecpm.com/c6/60/04/c6600416d6244d73e35d8ef28bc9dc0c.js"></script>
+        <p style="color: #666; letter-spacing: 3px;">ROYAL PRIVILEGE</p>
+
+        <div class="services-grid">
+            <div class="card" onclick="playTone()"><h3>📧 VIP Mail</h3></div>
+            <div class="card" onclick="playTone()"><h3>📥 Royal DL</h3></div>
+            <div class="card" onclick="playTone()"><h3>🔗 Gold Link</h3></div>
         </div>
 
-        <div style="text-align: right;">
-            <div style="color: var(--accent); font-weight: bold; margin-bottom: 10px;">📥 الوارد:</div>
-            <div id="messages" style="color: #aaa; font-size: 0.8rem;">بانتظار الرسائل...</div>
-        </div>
+        <div class="dev-name">Developed by md-5q 👑</div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        let currentEmail = "";
-        const smartLink = "https://www.profitablecpmrate.com/y33v8d462?key=c6600416d6244d73e35d8ef28bc9dc0c"; 
+        // تفاعل النجوم مع الحركة
+        particlesJS('particles-js', {
+            "particles": {
+                "number": { "value": 100 },
+                "color": { "value": "#d4af37" },
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.6, "random": true },
+                "size": { "value": 3 },
+                "line_linked": { "enable": true, "distance": 150, "color": "#d4af37", "opacity": 0.2 },
+                "move": { "enable": true, "speed": 1.5 }
+            },
+            "interactivity": {
+                "events": { "onhover": { "enable": true, "mode": "grab" } },
+                "modes": { "grab": { "distance": 200, "line_linked": { "opacity": 0.5 } } }
+            }
+        });
 
-        function handleButtonClick() { 
-            window.open(smartLink, '_blank'); 
-            generateNew(); 
+        // بصمة الصوت الكريستالية
+        function playTone() {
+            const context = new (window.AudioContext || window.webkitAudioContext)();
+            const osc = context.createOscillator();
+            const gain = context.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(880, context.currentTime); // نغمة كريستال حادة وفخمة
+            gain.gain.exponentialRampToValueAtTime(0.00001, context.currentTime + 1);
+            osc.connect(gain);
+            gain.connect(context.destination);
+            osc.start();
+            osc.stop(context.currentTime + 1);
         }
-
-        async function generateNew() {
-            const domains = ["1secmail.com", "1secmail.org", "1secmail.net"];
-            const randomDomain = domains[Math.floor(Math.random() * domains.length)];
-            const user = Math.random().toString(36).substring(2, 10);
-            currentEmail = user + "@" + randomDomain;
-            document.getElementById('email-display').innerText = currentEmail;
-            startChecking();
-        }
-
-        function copyEmail() { 
-            navigator.clipboard.writeText(currentEmail); 
-            alert("تم نسخ البريد بنجاح!"); 
-        }
-
-        async function checkInbox() {
-            if (!currentEmail) return;
-            const [user, domain] = currentEmail.split('@');
-            try {
-                const res = await fetch(`https://www.1secmail.com/api/v1/?action=getMessages&login=${user}&domain=${domain}`);
-                const emails = await res.json();
-                if (emails.length > 0) {
-                    let html = "";
-                    for (let msg of emails) {
-                        html += `<div class="msg-card"><b>من:</b> ${msg.from}<br><b>الموضوع:</b> ${msg.subject}</div>`;
-                    }
-                    document.getElementById('messages').innerHTML = html;
-                }
-            } catch (e) {}
-        }
-
-        function startChecking() { 
-            if (window.inboxTimer) clearInterval(window.inboxTimer); 
-            window.inboxTimer = setInterval(checkInbox, 5000); 
-        }
-
-        window.onload = generateNew;
     </script>
 </body>
 </html>
